@@ -1,0 +1,15 @@
+name: Telnyx Workflow
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Telnyx Test
+        run: |
+          npm install
+          npx cypress open

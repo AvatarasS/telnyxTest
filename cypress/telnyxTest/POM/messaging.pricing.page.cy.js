@@ -21,6 +21,7 @@ class MessagingPricingPage{
     checkTabListButtonsSwitch(){
         this.tabListButtons.each(($el) => {
             cy.wrap($el).should('be.visible')
+                        .scrollIntoView()
                         .click()
                         .should('have.attr', 'aria-selected', 'true')
                         this.firstPanelTitle.should('be.visible')

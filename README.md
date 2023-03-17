@@ -32,7 +32,7 @@ The following test cases are included in this project:
 6. ID#006 Test the correct "href" attribute of social media buttons on Main page.
 7. ID#007 Test the Solutions button click and the pagination next button click functionality on Solutions page.
 8. ID#008 Test the dropdown reason choose functionality to select "Sales-Inquiry" on Contactus page.
-9. ID#009 Test the "Sender Types" tab list buttons on Messaging page switch between panels correctly.
+9. ID#009 Test the "Sender Types" tab lists buttons on Messaging page switch between tabs correctly.
 10. ID#010 Test the FAQ buttons on Messaging page expand and show the corresponding information correctly.
 
 

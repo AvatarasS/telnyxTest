@@ -81,7 +81,7 @@ describe("Telnyx", () => {
         contactusPage.checkDropdownReasonChoosing()
     })
 
-    it('ID#009 Test the "Sender Types" tab list buttons on Messaging page switch between panels correctly.', () => {
+    it.only('ID#009 Test the "Sender Types" tab lists buttons on Messaging page switch between tabs correctly.', () => {
         headerPage.clickPricingButton()
         headerPage.clickMenuitemButton(1)
         messagingPricingPage.checkTabListButtonsSwitch()

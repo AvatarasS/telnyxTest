@@ -13,4 +13,4 @@ jobs:
         with:
           browser: chrome
           start: npx cypress run
-          spec: cypress\telnyxTest\telnyx.spec.cy.js
+          spec: cypress/telnyxTest/telnyx.spec.cy.js

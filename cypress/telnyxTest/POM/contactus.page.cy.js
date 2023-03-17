@@ -4,7 +4,7 @@ class ContactusPage{
         return cy.get('[id="Reason_for_Contact__c"]')
     }
 
-    dropdownReasonChoose(){
+    checkDropdownReasonChoosing(){
         this.dropdownReason.select(1)
                            .should('have.value', 'Sales-Inquiry')
     }

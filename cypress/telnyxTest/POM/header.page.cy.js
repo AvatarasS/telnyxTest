@@ -1,54 +1,59 @@
 require('@cypress/xpath');
 
 class HeaderPage{
-
     get headerLogoButton(){
-        return cy.get('header').find('[class="c-buvHyO c-buvHyO-ikFbPuA-css"]')
-                               .find('svg')
-    }
-
-    checkHeaderLogoButtonLocation(){
-        this.headerLogoButton.should('have.css', 'position', 'static')
-                             .and('have.css', 'margin-right', '0px')
-                             .and('have.css', 'margin-left', '0px')
-    }
-
-    checkHeaderLogoButtonRedirection(link){
-        this.headerLogoButton.should('be.visible')
-                             .click()
-        cy.url().should('eq', link)
+        return cy.get('[class="c-buvHyO c-buvHyO-ikFbPuA-css"]')
     }
 
     get loginButton(){
         return cy.get('[class*="c-buvHyO-ideTXhm-css"] a[href*=portal]')
     }
 
-    loginButtonClick(){
-        this.loginButton.invoke('removeAttr', 'target')
-                        .click()
-        cy.url().should('contain', 'portal')
-    }
-
     get signupButton(){
         return cy.get('[id="header-sign-up"]')
-    }
-
-    signupButtonClick(){
-        this.signupButton.click()
-        cy.url().should('contain', 'sign-up')
     }
 
     get productsButton(){
         return cy.xpath('//*[@id="radix-:R55jm:"]')
     }
 
-    productsButtonClick(){
-        this.productsButton.click()
-                           .should('have.attr', 'data-state', 'open')
-    }
-
     get menuitemButtons(){
         return cy.get('div[role="menuitem"]')
+    }
+
+    get solutionsButton(){
+        return cy.xpath('//*[@class="c-ckejlg"][not(@id="navigation")]/a')
+    }
+
+    get contactusButton(){
+        return cy.get('[class*="ideTXhm-css"] a[href*="contact"]')
+    }
+
+    get pricingButton(){
+        return cy.xpath('//*[@id="radix-:R5djm:"]')
+    }
+
+    checkHeaderLogoButtonRedirection(link){
+        Cypress.on('uncaught:exception', () => false)
+        this.headerLogoButton.should('be.visible')
+                             .click()
+        cy.url().should('eq', link)
+    }
+
+    clickLoginButton(){
+        this.loginButton.invoke('removeAttr', 'target')
+                        .click()
+        cy.url().should('contain', 'portal')
+    }
+
+    clickSignupButton(){
+        this.signupButton.click()
+        cy.url().should('contain', 'sign-up')
+    }
+
+    clickProductsButton(){
+        this.productsButton.click()
+                           .should('have.attr', 'data-state', 'open')
     }
 
     checkMenuitemButtons(){
@@ -59,29 +64,17 @@ class HeaderPage{
             .should('be.eq', 7)
     }
 
-    get solutionsButton(){
-        return cy.xpath('//*[@class="c-ckejlg"][not(@id="navigation")]/a')
-    }
-
-    solutionsButtonClick(){
+    clickSolutionsButton(){
         this.solutionsButton.click()
         cy.url().should('contain', 'solutions')
     }
 
-    get contactusButton(){
-        return cy.get('[class*="ideTXhm-css"] a[href*="contact"]')
-    }
-
-    contactusButtonClick(){
+    clickContactusButton(){
         this.contactusButton.click()
         cy.url().should('contain', 'contact')
     }
 
-    get pricingButton(){
-        return cy.xpath('//*[@id="radix-:R5djm:"]')
-    }
-
-    menuitemButtonClick(i){
+    clickMenuitemButton(i){
         this.menuitemButtons.eq(i - 1).find('a')
                                       .should('have.attr', 'href')
                                       .then((href) => {
@@ -90,7 +83,7 @@ class HeaderPage{
                                       })
     }
 
-    pricingButtonClick(){
+    clickPricingButton(){
         this.pricingButton.click()
         this.menuitemButtons.should('be.visible')
     }

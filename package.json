@@ -4,6 +4,10 @@
   },
   "devDependencies": {
     "@cypress/xpath": "^2.0.3"
+  },
+  "scripts": {
+    "gui": "npx cypress open",
+    "headless": "cypress run --headless --browser chrome"
   }
 }
 

@@ -4,7 +4,7 @@ This project is an automated testing suite for the website [Redmine](https://tel
 
 ### Project Setup
 
-To run the automated tests in this project, follow these steps:
+To setup the automated tests in this project, follow these steps:
 1. Clone this repository to your local machine.
     - Open the terminal or command prompt on your machine.
     - Navigate to the directory where you want to download the repository.
@@ -15,7 +15,11 @@ To run the automated tests in this project, follow these steps:
     ```cd repository-name```
 3. Install all packages and dependencies using npm:
     ```npm install```
-4. Run ```npx cypress open``` to run the tests.
+
+### Running Tests
+
+- Run ```npm run gui``` to open Cypress GUI.
+- Run ```npm run headless``` to start the test runner in headless mode and run all tests in the Chrome browser without opening the GUI.
 
 ### Test Cases
 

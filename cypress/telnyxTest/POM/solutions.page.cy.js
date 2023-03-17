@@ -7,14 +7,21 @@ class SolutionsPage{
     get currentPageNumber() {
       return cy.get('[class="c-fdESms"] span[aria-label*="Current Page"]')
     }
+
+    get totalPageNumber() {
+      return cy.get('[class="c-fdESms"] span[aria-label*="Total pages"]')
+    }
       
-    paginationNextButtonClick() {
-      let totalPages = 6
-      for (let i = 1; i < totalPages; i++) {
-        this.paginationNextButton.click()
-        this.currentPageNumber.should('contain', `${i+1}`)
-        cy.url().should('contain', `/page/${i+1}`)
-      }
+    checkPaginationNextButton() {
+      this.totalPageNumber.invoke('text')
+                          .then((text) => {
+                            for (let i = 1; i < text; i++) {
+                              this.paginationNextButton.click()
+                              this.currentPageNumber.should('contain', `${i+1}`)
+                              cy.url().should('contain', `/page/${i+1}`)
+                            }
+      })
+      
     }
 }
 export default SolutionsPage

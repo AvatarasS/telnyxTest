@@ -1,6 +1,6 @@
 # Automated Testing for telnyx.com using Cypress and JavaScript
 
-This project is an automated testing suite for the website [Redmine](https://telnyx.com/), written in Cypress using JavaScript. The tests cover various features of the website such as login functionality, registration, contact us form, and more.
+This project is an automated testing suite for the website [Telnyx](https://telnyx.com/), written in Cypress using JavaScript. The tests cover various features of the website such as login functionality, registration, contact us form, and more.
 
 ### Project Setup
 

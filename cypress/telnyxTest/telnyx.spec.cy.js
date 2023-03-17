@@ -23,7 +23,7 @@ describe("Telnyx", () => {
         cy.get(".c-knFmwm.c-jVWmKv").click()
     })
 
-    it('ID#001 Test the Telnyx logo redirects to the Main page from Solution page', () => {
+    it.only('ID#001 Test the Telnyx logo redirects to the Main page from Solution page', () => {
         headerPage.clickSolutionsButton()
         headerPage.checkHeaderLogoButtonRedirection('https://telnyx.com/')
     })

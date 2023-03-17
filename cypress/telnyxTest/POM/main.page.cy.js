@@ -13,27 +13,30 @@ class MainPage {
     }
 
     checkLinkedinButton(){
-        this.socialLinkedinButton.eq(0)
+        this.socialButtons.eq(0)
                                  .should('be.visible')
                                  .invoke('removeAttr', 'target')
                                  .click()
         cy.url().should('contain', 'linkedin')
+        cy.go('back')
     }
 
     checkTwitterButton(){
-        this.socialTwitterButton.eq(1)
+        this.socialButtons.eq(1)
                                  .should('be.visible')
                                  .invoke('removeAttr', 'target')
                                  .click()
         cy.url().should('contain', 'twitter')
+        cy.go('back')
     }
 
     checkFacebookButton(){
-        this.socialFacebookinButton.eq(2)
+        this.socialButtons.eq(2)
                                  .should('be.visible')
                                  .invoke('removeAttr', 'target')
                                  .click()
         cy.url().should('contain', 'facebook')
+        cy.go('back')
     }
 }  
   export default MainPage

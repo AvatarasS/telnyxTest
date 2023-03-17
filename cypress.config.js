@@ -7,6 +7,7 @@ module.exports = defineConfig({
     pageLoadTimeout: 100000,
     specPattern: 'cypress/telnyxTest/telnyx.spec.cy.js',
     defaultCommandTimeout: 10000,
+    video: false,
     setupNodeEvents(on, config) {
       // implement node event listeners here
     },

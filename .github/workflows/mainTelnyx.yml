@@ -11,4 +11,4 @@ jobs:
       - name: Cypress.io
         uses: cypress-io/github-action@v5.3.0
         with:
-          start: npx cypress open 
+          start: npm run headless 

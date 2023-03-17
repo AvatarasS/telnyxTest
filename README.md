@@ -24,16 +24,16 @@ To setup the automated tests in this project, follow these steps:
 ### Test Cases
 
 The following test cases are included in this project:
-1. ID#001 Verify that the Telnyx logo has right location and redirects to the homepage.
-2. ID#002 Verify that the user receives an error message when logging in with an invalid email and password combination.
-3. ID#003 Test the sign up functionality with valid credentials.
-4. ID#004 Test the sign up functionality with invalid credentials.
-5. ID#005 Test the header dropdown menu and display of menu item buttons.
-6. ID#006 Test the functionality of social media buttons
-7. ID#007 Test the solutions button click and pagination next button click functionality
-8. ID#008 Test the dropdown reason choose functionality
-9. ID#009 Test the tab list buttons switch between panels correctly
-10. ID#010 Test the FAQ buttons expand and show the corresponding information correctly 
+1. ID#001 Test the Telnyx logo redirects to the Main page from Solution page
+2. ID#002 Test the user receives an error message on LogIn page when logging in with an invalid email and password combination.
+3. ID#003 Test the Signup form functionality on Signup page to be filled with credentials and checkbox to be checked.
+4. ID#004 Test the user receives an error message on Signup page when registry with empty required fields.
+5. ID#005 Test the displaying of buttons in Products dropdown menu in header.
+6. ID#006 Test the correct "href" attribute of social media buttons on Main page.
+7. ID#007 Test the Solutions button click and the pagination next button click functionality on Solutions page.
+8. ID#008 Test the dropdown reason choose functionality to select "Sales-Inquiry" on Contactus page.
+9. ID#009 Test the "Sender Types" tab list buttons on Messaging page switch between panels correctly.
+10. ID#010 Test the FAQ buttons on Messaging page expand and show the corresponding information correctly.
 
 
 ### Notes

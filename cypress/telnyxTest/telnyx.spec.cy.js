@@ -23,7 +23,7 @@ describe("Telnyx", () => {
         cy.get(".c-knFmwm.c-jVWmKv").click()
     })
 
-    it('ID#001 Test the Telnyx logo redirects to the Main page from Solution page', () => {
+    it('ID#001 Test the Telnyx logo redirects to the Main page from Solution page.', () => {
         headerPage.clickSolutionsButton()
         headerPage.checkHeaderLogoButtonRedirection('https://telnyx.com/')
     })
@@ -36,10 +36,10 @@ describe("Telnyx", () => {
         });
         loginPage.clickLoginSubmitButton()
         loginPage.errorMessage.should("be.visible")
-                             .and("contain", "That email and password combination is not valid")
+                              .and("contain", "That email and password combination is not valid")
     });
 
-    it('ID#003 Test the Signup form functionality on Signup page to be filled with credentials and checkbox to be checked', () => {
+    it('ID#003 Test the Signup form functionality on Signup page to be filled with credentials and checkbox to be checked.', () => {
         headerPage.clickSignupButton();
         cy.fixture("testData.json").then((testData) => {
             signupPage.checkFillEmailField(testData.signup.email)
@@ -49,7 +49,7 @@ describe("Telnyx", () => {
         signupPage.checkEnablingTermsCheckbox()
      });
 
-    it('ID#004 Test the user receives an error message on Signup page when registry with empty required fields', () => {
+    it('ID#004 Test the user receives an error message on Signup page when registry with empty required fields.', () => {
         headerPage.clickSignupButton()
         signupPage.clickSignupSubmitButton()
         signupPage.emailErrorMessage.should('be.visible')
@@ -60,34 +60,34 @@ describe("Telnyx", () => {
                                     .and('have.text', 'errorPlease accept the terms and conditions')
     })
 
-    it('ID#005 Test the header Products dropdown menu and the displaying of menu item buttons', () => {
+    it('ID#005 Test the displaying of buttons in Products dropdown menu in header.', () => {
         headerPage.clickProductsButton()
         headerPage.checkMenuitemButtons()
     });
 
-    it.skip('ID#006 Verify that all social media buttons on the Main page are functional and redirect to valid website', () => {
+    it('ID#006 Test the correct "href" attribute of social media buttons on Main page.', () => {
         mainPage.checkLinkedinButton()
         mainPage.checkTwitterButton()
         mainPage.checkFacebookButton()
     });
 
-    it('ID#007 Test the Solutions button click and the pagination next button click functionality on Solutions page', () => {
+    it('ID#007 Test the Solutions button click and the pagination next button click functionality on Solutions page.', () => {
         headerPage.clickSolutionsButton()
         solutionsPage.checkPaginationNextButton()
     });
 
-    it('ID#008 Test the dropdown reason choose functionality to select "Sales-Inquiry" on Contactus page', () => {
+    it('ID#008 Test the dropdown reason choose functionality to select "Sales-Inquiry" on Contactus page.', () => {
         headerPage.clickContactusButton()
         contactusPage.checkDropdownReasonChoosing()
     })
 
-    it('ID#009 Test the "Sender Types" tab list buttons on Messaging page switch between panels correctly', () => {
+    it('ID#009 Test the "Sender Types" tab list buttons on Messaging page switch between panels correctly.', () => {
         headerPage.clickPricingButton()
         headerPage.clickMenuitemButton(1)
         messagingPricingPage.checkTabListButtonsSwitch()
     })
 
-    it('ID#010 Test the FAQ buttons on Messaging page expand and show the corresponding information correctly ', () => {
+    it('ID#010 Test the FAQ buttons on Messaging page expand and show the corresponding information correctly.', () => {
         headerPage.clickPricingButton()
         headerPage.clickMenuitemButton(1)
         messagingPricingPage.checkFaqButtons()

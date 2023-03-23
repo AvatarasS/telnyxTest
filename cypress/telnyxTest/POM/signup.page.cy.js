@@ -34,19 +34,16 @@ class SignupPage {
     }
     
 
-    checkFillEmailField(email) {
+    fillEmailField(email) {
         this.emailField.type(email)
-                       .should('have.value', email)
     }
 
-    checkFillNameField(name) {
+    fillNameField(name) {
         this.nameField.type(name)
-                      .should('have.value', name)
     }
 
-    checkFillPasswordField(password) {
+    fillPasswordField(password) {
         this.passwordField.type(password)
-                          .should('have.value', password)
     }
 
     checkEnablingTermsCheckbox(){

@@ -5,7 +5,7 @@ module.exports = defineConfig({
     viewportWidth: 1920,
     viewportHeight: 1080,
     pageLoadTimeout: 100000,
-    specPattern: 'cypress/telnyxTest/telnyx.spec.cy.js',
+    specPattern: 'cypress/telnyxTest/*.cy.{js,jsx,ts,tsx}',
     defaultCommandTimeout: 10000,
     video: false,
     setupNodeEvents(on, config) {

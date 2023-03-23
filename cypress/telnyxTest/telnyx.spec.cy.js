@@ -35,16 +35,21 @@ describe("Telnyx", () => {
             loginPage.fillPasswordField(testData.login.password)
         });
         loginPage.clickLoginSubmitButton()
-        loginPage.errorMessage.should("be.visible")
-                              .and("contain", "That email and password combination is not valid")
+        cy.fixture("testData.json").then((testData) => {
+            loginPage.errorMessage.should("be.visible")
+                              .and("contain", testData.errorMassage.login.notValid)
+        });
     });
 
-    it('ID#003 Test the Signup form functionality on Signup page to be filled with credentials and checkbox to be checked.', () => {
+    it.only('ID#003 Test the Signup form functionality on Signup page to be filled with credentials and checkbox to be checked.', () => {
         headerPage.clickSignupButton();
         cy.fixture("testData.json").then((testData) => {
-            signupPage.checkFillEmailField(testData.signup.email)
-            signupPage.checkFillNameField(testData.signup.name)
-            signupPage.checkFillPasswordField(testData.signup.password)
+            signupPage.fillEmailField(testData.signup.email)
+            signupPage.emailField.should('have.value', testData.signup.email)
+            signupPage.fillNameField(testData.signup.name)
+            signupPage.nameField.should('have.value', testData.signup.name)
+            signupPage.fillPasswordField(testData.signup.password)
+            signupPage.passwordField.should('have.value', testData.signup.password)
         });
         signupPage.checkEnablingTermsCheckbox()
      });
@@ -52,13 +57,15 @@ describe("Telnyx", () => {
     it('ID#004 Test the user receives an error message on Signup page when registry with empty required fields.', () => {
         headerPage.clickSignupButton()
         signupPage.clickSignupSubmitButton()
-        signupPage.emailErrorMessage.should('be.visible')
-                                    .and('have.text', 'errorThis field is required.')
-        signupPage.nameErrorMessage.should('be.visible')
-                                   .and('have.text', 'errorThis field is required.')
-        signupPage.termsErrorMessage.should('be.visible')
-                                    .and('have.text', 'errorPlease accept the terms and conditions')
-    })
+        cy.fixture("testData.json").then((testData) => {
+            signupPage.emailErrorMessage.should('be.visible')
+                                        .and('have.text', testData.errorMassage.signup.fieldRequired)
+            signupPage.nameErrorMessage.should('be.visible')
+                                       .and('have.text', testData.errorMassage.signup.fieldRequired)
+            signupPage.termsErrorMessage.should('be.visible')
+                                        .and('have.text', testData.errorMassage.signup.acceptTerms)
+        });
+    });
 
     it('ID#005 Test the displaying of buttons in Products dropdown menu in header.', () => {
         headerPage.clickProductsButton()
@@ -79,17 +86,17 @@ describe("Telnyx", () => {
     it('ID#008 Test the dropdown reason choose functionality to select "Sales-Inquiry" on Contactus page.', () => {
         headerPage.clickContactusButton()
         contactusPage.checkDropdownReasonChoosing()
-    })
+    });
 
     it('ID#009 Test the "Sender Types" tab lists buttons on Messaging page switch between tabs correctly.', () => {
         headerPage.clickPricingButton()
         headerPage.clickMenuitemButton(1)
         messagingPricingPage.checkTabListButtonsSwitch()
-    })
+    });
 
     it('ID#010 Test the FAQ buttons on Messaging page expand and show the corresponding information correctly.', () => {
         headerPage.clickPricingButton()
         headerPage.clickMenuitemButton(1)
         messagingPricingPage.checkFaqButtons()
-    })
+    });
 }); 

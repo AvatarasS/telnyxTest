@@ -19,7 +19,7 @@ To setup the automated tests in this project, follow these steps:
 ### Running Tests
 
 - Run ```npm run gui``` to open Cypress GUI.
-- Run ```npm run headless chrome``` to start the test runner in headless mode and run all tests in the Chrome browser without opening the GUI.
+- Run ```npm run headlessChrome``` to start the test runner in headless mode and run all tests in the Chrome browser without opening the GUI.
 
 ### Test Cases
 

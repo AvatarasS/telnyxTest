@@ -1,12 +1,21 @@
 {
-    "telnyxUrl": "https://telnyx.com/",
+  "telnyxUrl": "https://telnyx.com/",
+  "login": {
+    "email": "qwe@gmail.com",
+    "password": "1*1gf3lb4*_ga*"
+  },
+  "signup": {
+    "email": "qwe@gmail.com",
+    "name": "Dan Dan",
+    "password": "1*1gf3lb4*_ga*W"
+  },
+  "errorMassage": {
     "login": {
-      "email": "qwe@gmail.com",
-      "password": "1*1gf3lb4*_ga*"
+      "notValid": "That email and password combination is not valid"
     },
     "signup": {
-      "email": "qwe@gmail.com",
-      "name": "Dan Dan",
-      "password": "1*1gf3lb4*_ga*W"
+      "fieldRequired": "errorThis field is required.",
+      "acceptTerms": "errorPlease accept the terms and conditions"
     }
   }
+}

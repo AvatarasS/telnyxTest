@@ -41,7 +41,7 @@ describe("Telnyx", () => {
         });
     });
 
-    it.only('ID#003 Test the Signup form functionality on Signup page to be filled with credentials and checkbox to be checked.', () => {
+    it('ID#003 Test the Signup form functionality on Signup page to be filled with credentials and checkbox to be checked.', () => {
         headerPage.clickSignupButton();
         cy.fixture("testData.json").then((testData) => {
             signupPage.fillEmailField(testData.signup.email)

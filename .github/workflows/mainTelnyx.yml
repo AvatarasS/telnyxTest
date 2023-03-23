@@ -12,5 +12,5 @@ jobs:
         uses: cypress-io/github-action@v5.3.0
         with:
           browser: chrome
-          start: npx cypress run
+          start: npm run headlessChrome
           spec: cypress/telnyxTest/telnyx.spec.cy.js

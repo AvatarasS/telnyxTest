@@ -17,5 +17,10 @@
       "fieldRequired": "errorThis field is required.",
       "acceptTerms": "errorPlease accept the terms and conditions"
     }
+  },
+  "panelTitle": {
+    "first": "Services",
+    "second": "Carrier fees for outbound messages",
+    "third": "Carrier fees for inbound messages"
   }
 }

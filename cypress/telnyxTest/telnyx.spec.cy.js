@@ -25,7 +25,9 @@ describe("Telnyx", () => {
 
     it('ID#001 Test the Telnyx logo redirects to the Main page from Solution page.', () => {
         headerPage.clickSolutionsButton()
-        headerPage.checkHeaderLogoButtonRedirection('https://telnyx.com/')
+        cy.fixture("testData.json").then((testData) => {
+            headerPage.checkHeaderLogoButtonRedirection(testData.telnyxUrl)
+        });
     })
 
     it('ID#002 Test the user receives an error message on LogIn page when logging in with an invalid email and password combination.', () => {
